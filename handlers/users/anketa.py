@@ -14,7 +14,7 @@ async def enter_test(message: types.Message):
 async def answer_fullname(message: types.Message, state:FSMContext):
     fullname=message.text
     await state.update_data(name=fullname)
-    await message.answer("Email manzilingizni kiriting")
+    await message.answer("️🗒️Email manzilingizni kiriting")
     await PersonalData.next()
 
 @dp.message_handler(state=PersonalData.email)
@@ -23,7 +23,7 @@ async def answer_email(message: types.Message, state:FSMContext):
     await state.update_data(
         {"email": email}
     )
-    await message.answer("Telefon raqamingizni kiriting")
+    await message.answer("☎Telefon raqamingizni kiriting")
     await PersonalData.next()
 
 @dp.message_handler(state=PersonalData.phonenum)
